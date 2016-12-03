@@ -1,0 +1,15 @@
+<release-details-sidebar class="sidebar" [title]="release" ></release-details-sidebar>
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="column-header"><i class="fa fa-check-square passing" aria-hidden="true"></i> Unit</h2>
+        <status-box *ngFor="let product of products" [title]="product"></status-box>
+    </div>
+    <div class="col-md-4">
+        <h2 class="column-header"><i class="fa fa-check-square passing" aria-hidden="true"></i> Integration</h2>
+        <status-box *ngFor="let product of products" [title]="product"></status-box>
+    </div>
+    <div class="col-md-4">
+        <h2 class="column-header"><i class="fa fa-check-square passing" aria-hidden="true"></i> UI</h2>
+        <status-box *ngFor="let product of products" [title]="product"></status-box>
+    </div>
+</div>
