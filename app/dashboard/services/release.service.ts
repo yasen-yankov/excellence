@@ -1,9 +1,10 @@
+import { Observable } from 'rxjs/Observable';
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Release } from './../release';
+import { Release } from './../models/release';
 
 @Injectable()
 export class ReleaseService {
@@ -13,16 +14,10 @@ export class ReleaseService {
 
   constructor(private http: Http) { }
 
-  getReleases(): Promise<Release[]> {
+  getReleases(): Observable<Release[]> {
     return this.http.get(this.releasesUrl)
-               .toPromise()
-               .then(response => response.json().data as Release[])
+               .map(response => response.json().data as Release[])
                .catch(this.handleError);
-  }
-
-  getRelease(id: string): Promise<Release> {
-    return this.getReleases()
-               .then(releases => releases.find(release => release.id === id));
   }
 
   private handleError(error: any): Promise<any> {

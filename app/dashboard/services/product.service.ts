@@ -1,9 +1,8 @@
+import { Observable } from 'rxjs/Observable';
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
-
-import { Product } from './../product';
+import { Product } from './../models/product';
 
 @Injectable()
 export class ProductService {
@@ -13,16 +12,10 @@ export class ProductService {
 
   constructor(private http: Http) { }
 
-  getProducts(): Promise<Product[]> {
+  getProducts(): Observable<Product[]> {
     return this.http.get(this.productsUrl)
-               .toPromise()
-               .then(response => response.json().data as Product[])
+               .map(response => response.json().data as Product[])
                .catch(this.handleError);
-  }
-
-  getProduct(id: string): Promise<Product> {
-    return this.getProducts()
-               .then(products => products.find(product => product.id === id));
   }
 
   private handleError(error: any): Promise<any> {

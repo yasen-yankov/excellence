@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Release } from './../../release';
+import { Release } from './../../models/release';
 
 @Component({
   moduleId: module.id,
