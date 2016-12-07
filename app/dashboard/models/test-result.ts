@@ -6,4 +6,5 @@ export class TestResult {
   hasPassed: boolean;
   startDate: Date;
   endDate: Date;
+  testListResultId: string;
 }

@@ -1,5 +1,0 @@
-<div class="sidebar-small">
-    <ul>
-        <li *ngFor="let release of releases" [class.active]="selectedRelease && release.id == selectedRelease.id"><a [routerLink]="['/dashboard', release.id]"><span>{{release.name}}</span></a></li>
-    </ul>
-</div>

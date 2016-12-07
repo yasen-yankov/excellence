@@ -4,5 +4,5 @@ export class Release {
   id: string;
   name: string;
   isPassing: boolean;
-  product: Product;
+  productId: string;
 }

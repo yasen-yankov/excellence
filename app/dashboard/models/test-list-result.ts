@@ -3,9 +3,8 @@ import { TestResult } from './test-result';
 
 export class TestListResult {
   id: string;
-  testList: TestList;
+  testListId: string;
   hasPassed: boolean;
   startDate: Date;
   endDate: Date;
-  testResults: TestResult[];
 }
