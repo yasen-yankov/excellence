@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   moduleId: module.id,
   selector: 'status-page',
   template: `
+    <h1 class="page-header"><i class="fa fa-heartbeat" aria-hidden="true"></i> Status</h1>
     <div class="row">
         <div class="col-md-4">
             <h2 class="column-header"><i class="fa fa-check-square passing" aria-hidden="true"></i> Unit</h2>

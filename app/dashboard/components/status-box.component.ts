@@ -5,15 +5,17 @@ import { Component, Input } from '@angular/core';
   selector: 'status-box',
   template: `
     <div class="status-box">
-        <h4>
-            <i class="fa fa-check-square passing" aria-hidden="true"></i> {{title}}
-        </h4>
-        <p>
-            3023 Passing | 0 Failing
-            <br/>
-            <small>Last execution: 4 hours ago</small>
-        </p>
-        <div class="clearfix"></div>
+        <a href="#">
+            <h4>
+                <i class="fa fa-check-square passing" aria-hidden="true"></i> {{title}}
+            </h4>
+            <p>
+                3023 Passing | 0 Failing
+                <br/>
+                <small>Last execution: 4 hours ago</small>
+            </p>
+            <div class="clearfix"></div>        
+        </a>
     </div>
   `
 })
