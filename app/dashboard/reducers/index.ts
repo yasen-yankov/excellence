@@ -3,7 +3,6 @@ import { ActionReducer } from '@ngrx/store';
 import { Release } from '../models/release';
 
 import { compose } from '@ngrx/core/compose';
-import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
 import * as fromReleases from './release';
@@ -17,7 +16,7 @@ const reducers = {
 };
 
 export function reducer(state: any, action: any) {
-    return compose(storeFreeze, combineReducers)(reducers)(state, action);
+    return combineReducers(reducers)(state, action);
 }
 
 export const getReleasesState = (state: State) => state.releases;
